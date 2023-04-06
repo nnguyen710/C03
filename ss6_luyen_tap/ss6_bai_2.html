@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let str = prompt("Nhap chuoi:");
+    document.write(checkString(str));
+        function checkString(str){
+            let a = [];
+            let arr = str.split("");
+            let arr1 = ["U","E","O","A","I"];
+            for (let i = 0; i < arr.length; i++)
+                for (let j = 0; j < arr1.length; j++) {
+                 if (arr[i].toUpperCase() === arr1[j]){
+                     a.push(arr[i]);
+                 }
+            } return a;
+        }
+
+</script>
+</body>
+</html>
