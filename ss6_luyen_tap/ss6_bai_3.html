@@ -7,28 +7,73 @@
 <body>
 <script>
 
-  /*  let a = +prompt("nhap do dai cua mang");
+    /*  let a = +prompt("nhap do dai cua mang");
+      let arr = [];
+      for (let i = 0; i < a; i++) {
+          arr[i] = +prompt("nhap phan tu trong mang");
+      } document.write(arr + "<br>");
+          for (let i = 0; i <arr.length; i++) {
+              if ( arr[i] > 10 && arr[i] < 100) {
+                  document.write(arr[i])
+              }
+          }*/
+    let a = +prompt("nhap do dai cua mang");
     let arr = [];
+    let arr1 = [];
     for (let i = 0; i < a; i++) {
-        arr[i] = +prompt("nhap phan tu trong mang");
-    } document.write(arr + "<br>");
-        for (let i = 0; i <arr.length; i++) {
-            if ( arr[i] > 10 && arr[i] < 100) {
-                document.write(arr[i])
+        do {
+            arr[i] = +prompt("nhaapj phaanf tuwr thu " + (i + 1))
+            if (arr[i] < 10 || arr[i] >= 100) {
+                alert("moi ban nhap lai")
             }
-        }*/
-  let a = +prompt("nhap so a")
-  while (a < 10 || a > 100) {
-      a = +prompt("nhap lai")
-  }
+        } while (arr[i] < 10 || arr[i] >= 100)
+    }
+    for (let i = 0; i < a; i++) {
 
-  let n = a % 10
-  let m = Math.floor(a / 10)
-  if (n > m) {
-      alert("ok")
-  } else {
-      alert("not ok")
-  }
+        let n = a % 10;
+        let m = Math.floor(a / 10);
+        alert("dv" + n);
+        alert("truc" + m);
+        if (n > m) {
+            arr1.push(arr[i]);
+        }
+    }
+    alert(arr1);
+
+    /*while (a < 10 || a > 100) {
+        for (let i = 0; i < a; i++){
+            a = +prompt("nhap lai")
+            let n = a % 10;
+            let m = Math.floor(a / 10);
+            if (n > m) {
+                alert("ok")
+            } else {
+                alert("not ok")
+            } a.push(arr);
+        }
+} console.log(arr);*/
+    /*
+       // function check(a) {
+            while (a < 10 || a > 100) {
+                for (let i = 0; i < a; i++){
+                a = +prompt("nhap lai")
+            let n = a % 10;
+            let m = Math.floor(a / 10);
+                if (n > m) {
+                    alert("ok")
+                } else {
+                    alert("not ok")
+                } a.push(arr);
+            }
+        } document.write(arr);*/
+
+    //  document.write(check(a));
+    /// push vao mang
+
+    /*    for (let j = 0; j < a.length; j++) {
+            a[j] = +prompt("nhap vao so luong a");
+            a.push(arr[i]);*/
+
 
 </script>
 </body>

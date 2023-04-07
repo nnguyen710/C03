@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color: darkred">
+<table style="background-color: white">
+    <tr>
+        <td style="background-color: black ; color: white">TIP CALCULATOR</td>
+    </tr>
+    <tr>
+        <td>How much was your bill ?</td>
+    </tr>
+    <tr>
+        <td>$ <input type="text" id="money"></td>
+    </tr>
+    <tr>
+        <td>How was your service?</td>
+    </tr>
+    <tr>
+        <td>
+            <select id="tips">
+                <option>30% - Outstanding</option>
+                <option>20% - Good</option>
+                <option>15% - It was OK</option>
+                <option>10% - BAD</option>
+                <option>5% - Terrible</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            How many people are sharing the bill ?
+        </td>
+    </tr>
+    <tr>
+        <td><input type="text" id="people"></td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="result()" style="background-color: firebrick">CALCULATE!</button>
+        </td>
+    </tr>
+    <tr>
+        <td><div id="showResult"></div></td>
+    </tr>
+
+</table>
+<script>
+    function result() {
+        let money = document.getElementById('money').value;
+        let tips = document.getElementById('tips').value;
+        let people = document.getElementById('people').value;
+        let showResult = document.getElementById('showResult');
+        let total;
+        switch (tips) {
+            case '30% - Outstanding':
+                total = (money * 0.3) / people;
+                break;
+            case '20% - Good':
+                total = (money * 0.2) / people;
+                break;
+            case '15% - It was OK':
+                total = (money * 0.15) / people;
+                break;
+            case '10% - BAD':
+                total = (money * 0.1) / people;
+                break;
+            case '5% - Terrible':
+                total = (money * 0.05) / people;
+                break;
+        }
+        showResult.innerHTML = 'TIP AMOUNT $' + total + ' each';
+    }
+</script>
+</body>
+</html>
