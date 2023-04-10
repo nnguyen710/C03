@@ -6,9 +6,19 @@
 </head>
 <body>
 <script>
-    let a = +prompt("Nhap vao thang:");
-    let b = +prompt("nhap vao nam:");
-        if()
+    let a = +prompt("Nhap vao nam");
+    let b = +prompt("Nhap vao thàng");
+    if ((a % 4 === 0 && a % 100 !== 0) || a % 400 === 0 && b === 2) {
+        alert("29 ngay");
+    } else if (b === 2) {
+        alert("thang 2 co 28 ngay");
+    }   else if (b === 1 || b === 3 || b === 5 || b === 7 || b === 8 || b === 10 || b === 12) {
+            alert("31 ngay");
+        } else if(b === 4 || b === 6 || b === 9 || b === 11) {
+            alert("30 ngay");
+        } else {
+        alert("moi nhap lai thang");
+    }
 </script>
 </body>
 </html>
