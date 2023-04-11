@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let n = +prompt("Nhap do dai cua mang");
+        for (let i = 0; i < n; i++){
+            arr[i] = +prompt("Nhap phan tu cua mang");
+        } // document.write(n + "</br>");
+
+    let sum = 0;
+    let average = 0;
+        for (let i = 0; i <arr.length; i++){
+            sum += arr[i];
+    }   average = sum / arr.length;
+       // document.write(average + "</br>");
+
+    let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === average) {
+                count++;
+            }
+        } document.write("so luong so trung binh trong mang:" + " " + count);
+</script>
+</body>
+</html>

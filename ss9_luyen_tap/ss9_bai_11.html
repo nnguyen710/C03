@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkString(str) {
+        let array = str.split('');
+        let arr = ["0", "1", "2", "3", "a", "b", "c", "d"];
+        let arr1 = [];
+        let flag = false;
+
+        for (let i = 0; i < array.length; i++) {
+            flag= false
+            for (let j = 0; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    flag = true;
+                    break;
+                }
+            }
+            if (flag == false) {
+                arr1.push(array[i]);
+            }
+        }
+        alert(arr1);
+    }
+
+    checkString("jkg41111@##");
+</script>
+</body>
+</html>

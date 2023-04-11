@@ -6,24 +6,28 @@
 </head>
 <body>
 <script>
-    let max = arr[0];
-    let index=0;
-    let arr = [];
-    let count = 0;
-    let a = +prompt("nhap do dai cua mang");
-        for (let i = 0; i < a; i++) {
-            arr[i] = +prompt("nhap so luong phan tu");
-        } document.write(a + "</br>");
 
-        for (let i = 0; i < arr.length; i++) {
+    let arr = [];
+    let n = +prompt("nhap do dai cua mang");
+        for (let i = 0; i < n; i++) {
+            arr[i] = +prompt("nhap so luong phan tu");
+        } document.write(n + "</br>");
+
+    let max = arr[0];
+        for (let i = 0; i < arr.length;i++) {
+
             // gan max bang phan tu dau tien
             if (arr[i] > max) { // dat dieu kien cho max
                 max = arr[i];
-                index = i;
+            }
+        }  // document.write("so lon nhat la:"  + max + "<br>");
+
+    let count = 0;
+        for (let i = 0; i < arr.length; i++){
+            if (arr[i] === max) {
                 count++;
             }
-            document.write(count);
-        }document.write(arr);
+        } document.write("so luong so lon nhat trong mang" + count);
 
 
 
