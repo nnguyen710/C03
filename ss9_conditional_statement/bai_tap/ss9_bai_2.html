@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let salary = +prompt("Nhập vao luong cua nhan vien trong 1 thang");
+    document.write("lương : " + salary + 'triệu');
+    let time = +prompt("Nhập số giờ làm việc của nhan vien ");
+    let bonus;
+    if (hour < 100) {
+        document.write('<br>' + "Không đủ điều kiện nhận thưởng !");
+    } else if (time >= 200) {
+        bonus = salary * 0.2;
+        document.write('<br>' + "thưởng thêm " + bonus + ' Đ');
+    } else if (time >= 100) {
+        bonus = salary * 0.1;
+        document.write('<br>' + "thưởng thêm " + bonus + ' Đ');
+    }
+</script>
+</body>
+</html>
