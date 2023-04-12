@@ -6,19 +6,55 @@
 </head>
 <body>
 <script>
-    let a = +prompt("Nhap vao nam");
+ /*   let a = +prompt("Nhap vao nam");
     let b = +prompt("Nhap vao thàng");
-    if ((a % 4 === 0 && a % 100 !== 0) || a % 400 === 0 && b === 2) {
+    if ((a % 4 === 0 && a % 100 !== 0)
+        || a % 400 === 0 && b === 2) {
         alert("29 ngay");
     } else if (b === 2) {
         alert("thang 2 co 28 ngay");
-    }   else if (b === 1 || b === 3 || b === 5 || b === 7 || b === 8 || b === 10 || b === 12) {
-            alert("31 ngay");
-        } else if(b === 4 || b === 6 || b === 9 || b === 11) {
-            alert("30 ngay");
-        } else {
+    } else if (b === 1 || b === 3 || b === 5 || b === 7 || b === 8 || b === 10 || b === 12) {
+        alert("31 ngay");
+    } else if (b === 4 || b === 6 || b === 9 || b === 11) {
+        alert("30 ngay");
+    } else {
         alert("moi nhap lai thang");
-    }
+    }*/
+
+ let date = prompt ("Nhập vào ngày và tháng");
+ let arr = date.split('/');
+ let month = +arr[0];
+ let year = +arr[1];
+ if (( year % 4 === 0 && year % 100 !== 0)
+     || year % 400 === 0 && month === 2) {
+     alert("This month has 29 days");
+ } else
+     {
+         switch (month) {
+             case 1:
+             case 3:
+             case 5:
+             case 7:
+             case 8:
+             case 10:
+             case 12:
+                 alert("This month has 31 days!")
+                 break;
+             case 2:
+                 alert("This month has 28 days!")
+                 break;
+             case 4:
+             case 6:
+             case 9:
+             case 11:
+                 alert("This month has 30 days!")
+                 break;
+             default:
+                 alert("Please enter a valid month!")
+         }
+     }
+
 </script>
+<!--/ <input type="month">-->
 </body>
 </html>

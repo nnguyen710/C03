@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let c = prompt("nhap sau can chuyen doi");
+
+    function check(a) {
+        let b = a.toLowerCase().split(' ');
+        for (let i = 0; i < b.length; i++) {
+            b[i] = b[i].charAt(0).toUpperCase() + b[i].substring(1);
+        }
+        return b.join(' ');
+    }
+
+    alert(check(c));
+    /*  let a = prompt("nhap chuoi muon kiem tra");
+      let b = a.split(' ');
+      document.write(check(b));*/
+</script>
+</body>
+</html>

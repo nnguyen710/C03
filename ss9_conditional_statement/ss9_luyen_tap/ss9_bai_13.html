@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let n = +prompt("Nhập độ dài của mảng");
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("Nhập số lượng phần tử của mảng");
+    }
+    //document.write(arr + '</br>');
+    let flag = true;
+    for (let i = 0; i < arr.length; i++) {
+        if (checkPrime(arr[i]) == false) {
+            flag = false;
+            break;
+        }
+
+    }
+
+    // Kiểm tra biến flag
+    if (flag == true) {
+        document.write("OK" + '<br/>');
+    } else {
+        document.write("NO" + '<br/>');
+    }
+
+
+    function checkPrime(n) {
+        let flag = true;
+        if (n < 2) {
+            flag = false;
+        } else {
+            // lặp từ 2 tới n-1
+            for (let j = 2; j < n; j++) {
+                if (arr[j] % 2 == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+        }
+        return flag;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("nhập vào số muốn in trong dãy số vô hạn là : ");
+    let number = 50;
+    let count = 0;
+    while (true) {
+        number = number + count;
+
+        if (count == n) {
+            document.writeln("Số thứ " + n + " trong dãy số vô hạn là : " + number);
+            break;
+        }
+        count++;
+    }
+</script>
+</body>
+</html>

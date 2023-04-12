@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    for (let i = 1; i < 100; i++) {
+        let n = +prompt('Nhập vào các số tự nhiên');
+        if (n >= 100) {
+            document.write("số thứ " + i + ': ' + n + '<br>');
+        } else if (n > 0 && n < 100) {
+            document.write('Số thứ ' + i + ': ' + n + '<br>' + n + " là số thỏa mãn điều kiện ");
+            break;
+        }
+    }
+</script>
+</body>
+</html>
