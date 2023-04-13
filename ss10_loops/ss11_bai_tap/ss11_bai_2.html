@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let ageDad = +prompt("Nhập số tuổi của thằng cha đẻ ra thằng con");
+    let ageSon = +prompt("Nhập số tuổi của thằng con trời đánh");
+    if (ageDad + ageSon > 25) {
+        for (let i = 0; ; i++) {
+            if (ageDad + i === (ageSon + i) * 2) {
+                document.write("sau " + i + " năm thì tuổi cha gấp đôi tuổi con");
+                break;
+            }
+        }
+    } else {
+        document.write("Không xác định được số năm để tuổi cha gấp đôi tuổi con");
+    }
+
+</script>
+</body>
+</html>

@@ -14,17 +14,27 @@
     }
     document.write(checkFibonacci(arr));
 
+
     function checkFibonacci(arr) {
+        arr.sort();
         let flag = true;
         for (let i = 0; i < arr.length - 2;i++) {
+            // arr.length - 2  để xác định độ dài của mảng để không phải out of bounce.
             if (arr[i] + arr[i + 1] === arr[i + 2]) {
+                // xác định số có phải thuộc dãy fib hay không
                 flag = true;
             } else {
                 flag = false;
                 break;
             }
-        }return flag;
-    }
+        }
+        if (flag) {
+            return "OK";
+            } else {
+            return "NO";
+            }
+        }
+
 </script>
 </body>
 </html>
