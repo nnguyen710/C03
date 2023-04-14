@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let arr1 = [];
+    let n = +prompt("nhập vào độ dài của mảng ");
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("Nhập phần tử thứ " + (i + 1));
+    }
+    for (let j = 0; j < arr.length; j++) {
+        for (let k = 1; k <= arr[j]; k++) {
+            if (arr[j] === k * k) {
+                arr1.push(arr[j]);
+            }
+        }
+    }
+    document.write(arr + '<br>');
+    document.write('Các số chính phương có trong mảng là ' + arr1);
+
+</script>
+</body>
+</html>

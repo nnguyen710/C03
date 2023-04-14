@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let n = +prompt("Nhập độ dài của mảng");
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("Nhập các phần tử trong mảng");
+    }
+    document.write(arr);
+    let dem = 0;
+    for (let i = 0; i < arr.length; i++) {
+        let flag = true;
+        if (arr[i] === 2 || arr[i] === 3) {
+            dem++;
+            continue;
+        } else {
+            let count = 0;
+            for (let i = 2; i < arr[i]; i++) {
+                if (arr[i] % i === 0) {
+                    flag = false;
+                    count++;
+                }
+            }
+        }
+        if (flag === true) {
+            dem++;
+        }
+    }
+    if (dem === arr.length) {
+        alert("ok");
+    } else {
+        alert("not");
+    }
+
+</script>
+</body>
+</html>

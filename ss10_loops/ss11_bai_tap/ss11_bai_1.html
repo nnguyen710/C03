@@ -6,11 +6,22 @@
 </head>
 <body>
 <script>
-    let arr = [];
+ /*   let arr = [];
     let n = +prompt("Nhập số lượng phần tử của dãy số bất kỳ");
         for (let i = 0; i < n; i++){
             arr[i] = +prompt("nhập phần tử");
         }   document.write(arr[1]);
+        */
+ for (let i = 0; i <= 20 ; i++) {
+     for (let j = 0; j <= 20; j++) {
+         if (i === 0 || i === 20 || j === 0 || j === 20) {
+             document.write("*");
+         } else {
+             document.write("&nbsp&nbsp");
+         }
+     }
+     document.write('</br>');
+ }
 </script>
 </body>
 </html>
