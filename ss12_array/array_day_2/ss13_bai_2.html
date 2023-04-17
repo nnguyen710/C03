@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let m = +prompt("nhập hàng");
+    let n = +prompt("nhập cột");
+    let array = new Array(m);
+    for (let i = 0; i < m; i++) {
+        array[i] = new Array(n)
+        for (let j = 0; j < n; j++) {
+            array[i][j] = +prompt("nhập giá trị cho mảng con thứ " + (i + 1));
+        }
+    }   document.write(array + '</br>');
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array[i].length; j++) {
+            if (i === j || (i + j) === array.length - 1) {
+                sum += array[i][j]; // sum = array[i][j] + sum;
+            }
+        }
+    } document.write("Tổng hai các phần tử 2 đường chéo của mảng : " + sum + '<br>');
+</script>
+</body>
+</html>

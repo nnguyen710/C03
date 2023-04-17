@@ -7,33 +7,61 @@
 <body>
 <script>
 
-    let n = +prompt("Nhập độ dài của mảng:");
-    let arr = [];
-    for (let i = 0; i < n; i++) {
-        arr[i] = +prompt("Nhập các phần tử của mảng:");
-    }
-    document.write(checkFibonacci(arr));
-
-
+     let n = +prompt("Nhập độ dài của mảng:");
+     let arr = [];
+     for (let i = 0; i < n; i++) {
+         let ar = +prompt("Nhập các phần tử của mảng:");
+         arr.push(ar);
+    } alert(arr);
+     let max = arr[0];
+     for (let i = 0; i <arr.length ; i++) {
+         if (max < arr[i]){
+             max = arr[i];
+         }
+     }
+    let max1 = max;
+    alert(checkFibonacci(max1));
     function checkFibonacci(arr) {
-        arr.sort();
-        let flag = true;
-        for (let i = 0; i < arr.length - 2;i++) {
-            // arr.length - 2  để xác định độ dài của mảng để không phải out of bounce.
-            if (arr[i] + arr[i + 1] === arr[i + 2]) {
-                // xác định số có phải thuộc dãy fib hay không
-                flag = true;
-            } else {
-                flag = false;
-                break;
-            }
+        let a = 0;
+        let b = 1;
+        let max = a + b;
+        let arr2 = [];
+        for (let i = 0; i < arr; i++) {
+            arr2.push(a);
+            a = b;
+            b = max;
+            max = a + b;
         }
-        if (flag) {
-            return "OK";
-            } else {
-            return "NO";
-            }
-        }
+        return arr2;
+    } f
+     if ( max === arr.length) {
+         alert("OK") ;
+     } else {
+         alert ("NO");
+     }
+
+    // arr.sort();
+    // let maxFib = arr[arr.length-1];
+    // //20
+    // //0 1 1 ....13
+    // let flag = true;
+    // let sum = 0;
+    // let arr1 = [];
+    //
+    // for (let i = 0; i < maxFib;i++) {
+    //     // arr.length - 2  để xác định độ dài của mảng để không phải out of bounce.
+    //         for (let j = 0; j < arr1.length ; j++) {
+    //             if(arr[i] === arr1[j]){
+    //                 sum++;
+    //                 flag = true;
+    //         } else {
+    //                 arr1.push(arr[i]);
+    //                 flag = false;
+    //
+    //                 break;
+    //             }
+    //     }
+
 
 </script>
 </body>
