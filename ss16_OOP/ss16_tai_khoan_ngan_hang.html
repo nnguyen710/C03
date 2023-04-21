@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button onclick="addAccount()"; style="width: 140px; height: 50px">Add Account</button>
+<button onclick="deposit()" style="width: 140px; height: 50px">Deposit</button>
+<button onclick="withdraw()" style="width: 140px; height: 50px">Withdraw</button>
+<button onclick="deleteAccount()" style="width: 140px; height: 50px">Delete</button>
+
+<p id="id"></p>
+<script>
+    class BankAccount {
+        constructor(list, accountNumber, name, balance) {
+            this.list = list;
+            this.accountNumber = accountNumber;
+            this.name = name;
+            this.balance = balance;
+    }
+
+        getList() {
+            return this.list;
+        }
+
+        getAccountNumber() {
+            return this.accountNumber;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getBalance() {
+            return this.balance;
+        }
+
+        setList(list) {
+            this.list = list;
+        }
+
+        setAccountNumber(accountNumber) {
+            this.accountNumber = accountNumber;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        setBalanceNumber(balance) {
+            this.balance = balance;
+        }
+    }
+    let khachHang1 = new BankAccount(1,7019,'Mai',1500);
+    let khachHang2 = new BankAccount(2,2002,'Nguyen',3100);
+    let khachHang3 = new BankAccount(3,1503,'Thien',4700);
+    let khachHang4 = new BankAccount(4,7435,'Ned',380000);
+    let arr = [];
+    arr.push(khachHang1,khachHang2, khachHang3, khachHang4);
+
+    function account() {
+        let table = '<table border="1" style="width: 600px; height: 350px; text-align: center;background-color: lightblue" >\n' +
+            '    <tr>\n' +
+            '        <th>List</th>\n' +
+            '        <th>Account Number</th>\n' +
+            '        <th>Name</th>\n' +
+            '        <th>Balance</th>\n' +
+            '    </tr>'
+
+        for (let i = 0; i <arr.length ; i++) {
+            table += '    <tr>\n' +
+                '        <td>'+ (i + 1)  +'</td>\n' +
+                '        <td>'+ arr[i].getAccountNumber() +'</td>\n' +
+                '        <td>'+ arr[i].getName()+'</td>\n' +
+                '        <td>' +arr[i].getBalance()+'</td>\n' +
+                '    </tr>'
+
+        }
+        table+='</table>';
+        document.getElementById('id').innerHTML= table;
+    }
+    account();
+    function deposit(){
+        let enterCode = prompt("Nhập vào số tài khoản muốn thêm tiền thêm tiền");
+        let deposit = +prompt("Nhập số tiền muốn nạp vào");
+       let send = confirm("Bạn có muốn gửi không?");
+            if (send) {
+                for (let i = 0; i < arr.length ; i++) {
+                    if (enterCode == arr[i].getAccountNumber()){
+                        let sum = arr[i].getBalance() + deposit;
+                        arr[i].setBalanceNumber(sum);
+                    }
+                }
+            } account();
+    }
+    function withdraw(){
+        let enterAccount = +prompt("Nhập vào số tài khoản muốn rút tiền");
+        let withdraw1 = +prompt("Nhập số tiền muốn rút");
+        let send = confirm("Bạn có muốn rút không ?");
+            if (send) {
+                for (let i = 0; i < arr.length; i++) {
+                    if (enterAccount == arr[i].getAccountNumber()) {
+                        let sub = arr[i].getBalance() - withdraw1;
+                        arr[i].setBalanceNumber(sub);
+
+                    }
+                }
+            } account();
+        }
+    function addAccount() {
+        let list;
+        let add = prompt("Nhập số tài khoản muốn thêm");
+        let addName = prompt("Nhập tên chủ tài khoản");
+        let balance = +prompt("Nhập vào số tiền");
+        let account1 = new BankAccount(list, add, addName,balance); // new Array là khởi tạo 1 đối tượng class Array.
+        arr.push(account1);
+        account();
+    }
+
+    function deleteAccount() {
+        let erase = prompt("Nhập số tài khoản muốn xóa");
+        let send = confirm("Bạn có chắc chắn muốn xóa không?");
+            if (send) {
+                for (let i = 0; i < arr.length ; i++) {
+                    if (erase == arr[i].getAccountNumber()){
+                        arr.splice(i,1);
+                    }
+                }
+            } else {
+                alert("Không xóa");
+            }
+            account();
+    }
+
+
+</script>
+</body>
+</html>
