@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập vào độ dài của mảng");
+    let arr = [];
+    for (let i = 0; i < n ; i++) {
+        arr[i] = +prompt("Nhập vào các phần tử của mảng");
+    }   document.write(arr + '</br>');
+
+    let sub = arr[1] - arr[0];
+    let flag = true;
+    for (let i = 1; i < arr.length -1  ; i++) {
+        if (sub != arr[i + 1] - arr[i]) {
+            flag = false;
+            break;
+        }
+    } //alert(arr)
+
+        if (flag) {
+            document.write("OK");
+        } else {
+            document.write("NO");
+    }
+</script>
+</body>
+</html>

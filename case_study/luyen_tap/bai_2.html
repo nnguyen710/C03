@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkArray(arr){
+        let flag = true;
+        for (let i = 0; i < arr.length/2 ; i++) {
+             flag = true;
+                if (arr[i] * arr[i] != arr[(arr.length/2) + i]){
+                    flag = false;
+                    break;
+                }
+        }
+        return flag;
+    }
+    let n = +prompt("Nhập vào độ dài của mảng: ");
+    let array = [];
+    if (n % 2 == 0) {
+        for (let i = 0; i < n; i++) {
+            let ar = +prompt("Nhập vào số phần tử của mảng:");
+            array.push(ar);
+        }
+    }
+
+    let a=[1,2,3,1,4,9];
+
+   alert(checkArray(array));
+
+</script>
+</body>
+</html>

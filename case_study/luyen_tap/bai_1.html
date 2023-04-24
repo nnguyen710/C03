@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập vào độ dài của mảng: ");
+    let arr = [];
+    for (let i = 0; i < n ; i++) {
+        arr[i] = +prompt("Nhập vào các phần tử của mảng: ");
+    }   document.write(arr);
+
+    let even = 0;
+    let odd = 0;
+    for (let i = 0; i < arr.length ; i++) {
+        if ( arr[i] % 2 == 0) {
+            even++;
+        } if (arr[i] % 2 != 0) {
+            odd++;
+        }
+    }
+    if (even == odd){
+        alert("OK");
+    } else {
+        alert("NO");
+    }
+    alert(even);
+    alert(odd);
+</script>
+</body>
+</html>

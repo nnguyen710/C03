@@ -10,6 +10,8 @@
 <button onclick="deposit()" style="width: 140px; height: 50px">Deposit</button>
 <button onclick="withdraw()" style="width: 140px; height: 50px">Withdraw</button>
 <button onclick="deleteAccount()" style="width: 140px; height: 50px">Delete</button>
+<input id = 'name' type="text">
+<button sear></button>
 
 <p id="id"></p>
 <script>
@@ -78,7 +80,7 @@
                 '    </tr>'
 
         }
-        table+='</table>';
+        table = '</table>' + table;
         document.getElementById('id').innerHTML= table;
     }
     account();
@@ -133,7 +135,7 @@
             }
             account();
     }
-
+    function
 
 </script>
 </body>
