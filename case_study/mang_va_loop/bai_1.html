@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let n = +prompt("Nhập vào độ dài của mảng");
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("Nhập vào các phần tử của mảng");
+    }
+    console.log(arr);
+
+    let arr1 = [];
+    let sum = 0;
+    for (let j = 0; j < arr.length; j++) {
+        sum += arr[j];
+        arr1.push(sum);
+    }
+    document.write(arr1);
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // viết một hàm chuẩn hóa xâu ký tự:
+    // biến đổi xâu ký tự thành xâu sao cho trong xâu không có
+    // 2 dấu cách liền nhau và băt đầu mỗi tuwfw phải in hoa.
+    // Ví dụ tRuong TaN HAI >=> Trương Tan Hai'
+    // Và một hàm tìm từ dài nhất trong 1 xâu ký tự. Hàm main sử dụng
+    // các hàm này để nhập xâu ký tự từ bàn phím, in ra xâu trước
+    // và sau khi chuẩn hóa, 1 từ dài nhất trong xâu đó.
+
+    function check(a) {
+        let b = a.toLowerCase().split(' ');
+        for (let i = 0; i < b.length; i++) {
+            b[i] = b[i].charAt(0).toUpperCase() + b[i].substring(1);
+        }
+        return b.join(' ');
+    }
+    function findMax(arr) {
+
+        let max = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].length > max.length) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+
+    let c = prompt("nhap xâu cần chuyển đổi");
+    alert(check(c))
+    let d = check(c).split(' ');
+    alert(findMax(d));
+</script>
+</body>
+</html>
