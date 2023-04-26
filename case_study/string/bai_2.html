@@ -10,8 +10,7 @@
     let a = str.split('');
     console.log(a)
     for (let i = 0; i < a.length ; i++) {
-        let j = i + 1;
-        for (j; j < a.length; j++) {
+        for (let j = i + 1; j < a.length; j++) {
             if (a[i] === a[j]) {
                 a.splice(j, 1);
                 j--;

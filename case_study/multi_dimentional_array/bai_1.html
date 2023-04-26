@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let m = +prompt("Nhập vào độ dài mảng cha");
+    let n = +prompt("Nhập vào độ dài mảng con");
+    let arr = [];
+    for (let i = 0; i < m ; i++) {
+        arr[i] = [];
+        for (let j = 0; j < n ; j++) {
+            arr[i][j] = +prompt("Nhập vào các phần tử của mảng con");
+        }
+    } console.log(arr);
+    
+    function check(a) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length ; j++) {
+                if (arr[i][j] % 2 === 0){
+                    sum += arr[i][j];
+                }
+        }
+        } return sum;
+    }  console.log("Tổng các số chẵn có trong ma trận là: " + check(arr));
+</script>
+</body>
+</html>
