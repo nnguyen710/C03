@@ -4,7 +4,161 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+    table, tr, td {
+        border: 1px solid black;
+        padding: 5px;
+        text-align: center;
+    }
+    table {
+        border-collapse: collapse;
+    }
+</style>
 <body>
+<button onclick="addStudent()">Thêm học viên</button>
+<button onclick="modifyStudent()">Sửa thông tin học viên</button>
+<button onclick="eraseStudent()">Xóa học viên</button>
+<p id="id"></p>
+<script>
+    class CodeGym {
+        constructor(studentCode, name, grade, email, DOB, Module) {
+            this.studentCode = studentCode;
+            this.name = name;
+            this.grade = grade;
+            this.email = email;
+            this.DOB = DOB;
+            this.Module = Module;
+        }
 
+        getStudentCode() {
+            return this.studentCode;
+        }
+
+        setStudentCode(studentCode) {
+            this.studentCode = studentCode;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getGrade() {
+            return this.grade;
+        }
+
+        setGrade(grade) {
+            this.grade = grade;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        setEmail(email) {
+            this.email = email;
+        }
+
+        getDOB() {
+            return this.DOB;
+        }
+
+        setDOB(DOB) {
+            this.DOB = DOB;
+        }
+
+        getModule() {
+            return this.Module;
+        }
+
+        setModule(module) {
+            this.Module = module;
+        }
+    }
+    let s1 = new CodeGym("01","Ned Nguyen","C0323G1","nh.nguyen710@gmail.com","07/10/1992",'module 1');
+    let s2 = new CodeGym("02","Phat Ho","C0323G1","phatho@gmail.com","12/09/1999",'module 1');
+    let s3 = new CodeGym("03", "Chanh Tran", "C0323G1", "chanhtran@gmail.com","4/26/1984",'module 3');
+    let arr = [];
+    arr.push(s1,s2,s3)
+
+    function tableStudent() {
+       let table  = '<table>\n' +
+            '    <tr>\n' +
+            '        <td>STT</td>\n' +
+            '        <td>Mã học Viên</td>\n' +
+            '        <td>Tên </td>\n' +
+            '        <td>Lớp</td>\n' +
+            '        <td>Email</td>\n' +
+            '        <td>Ngày Sinh</td>\n' +
+            '        <td>Module</td>\n' +
+            '    </tr>\n'
+
+         for (let i = 0; i < arr.length ; i++) {
+             table +=  '    <tr>\n'+
+                 '        <td>'+ (i + 1) + '</td>\n' +
+                 '        <td>'+ arr[i].getStudentCode() + '</td>\n' +
+                 '        <td>'+ arr[i].getName() + '</td>\n' +
+                 '        <td>'+ arr[i].getGrade() + '</td>\n' +
+                 '        <td>'+ arr[i].getEmail() + '</td>\n' +
+                 '        <td>'+ arr[i].getDOB() + '</td>\n' +
+                 '        <td>'+ arr[i].getModule() + '</td>\n' +
+                 '    </tr>'
+         }
+        table += '</table>';
+        document.getElementById('id').innerHTML= table;
+    } tableStudent();
+
+    function addStudent(){
+        let order = prompt("Enter Student ID");
+        let name = prompt("Enter Student Name");
+        let grade = prompt("Enter Student Grade");
+        let email = prompt("Enter Student Email");
+        let date = prompt("Enter Student DOB");
+        let hv = new CodeGym(order, name, grade, email, date);
+                arr.push(hv);
+        tableStudent();
+        }
+    function eraseStudent() {
+        let erase = prompt("Enter Student ID:");
+        let send = confirm("Are you sure?");
+        if (send) {
+            for (let i = 0; i < arr.length ; i++) {
+                if (erase == arr[i].getStudentCode()){
+                    arr.splice(i,1);
+                }
+            }
+        } else {
+            alert("Không xóa");
+        } tableStudent();
+    }
+    function modifyStudent() {
+        let edit = prompt("Enter Student ID ");
+        let send = confirm(" Are you sure?");
+        if(send) {
+            for (let i = 0; i < arr.length ; i++) {
+                if (edit == arr[i].getStudentCode()){
+                    let name = prompt("Enter Student Name");
+                    arr[i].setName(name);
+                    arr[i].setStudentCode(edit);
+                    let grade = prompt("Enter Student Grade");
+                    arr[i].setGrade(grade);
+                    arr[i].setStudentCode(edit);
+                    let email = prompt("Enter Student email");
+                    arr[i].setEmail(email);
+                    arr[i].getStudentCode(edit);
+                    let date = prompt("Enter Student DOB");
+                    arr[i].setDOB(date);
+                    arr[i].getStudentCode(edit);
+                    let module = prompt("Enter Student module");
+                    arr[i].setModule(module);
+                    arr[i].getStudentCode(edit);
+                }
+            }
+        } tableStudent();
+    }
+</script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    table, th, tr, td {
+        border: 1px solid black;
+    }
+</style>
+<body>
+<button onclick="Add()">Thêm học viên</button>
+<button onclick="Modify()">Sửa thông tin học viên</button>
+<button onclick="Delete()">Xóa học viên</button>
+<table>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<p id="table">
+</p>
+<script>
+    document.getElementById('table').innerHTML = '<table>\n' +
+        '    <tr>\n' +
+        '        <td></td>\n' +
+        '        <td></td>\n' +
+        '        <td></td>\n' +
+        '    </tr>\n' +
+        '</table>'
+</script>
+</body>
+</html>
